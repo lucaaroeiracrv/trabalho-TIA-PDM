@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, FlatList, TextInput, Button, Alert } from 'react-native';
-import { Provider as PaperProvider, Appbar, Card, Paragraph } from 'react-native-paper';
+import { Provider as PaperProvider, Card, Paragraph } from 'react-native-paper';
 import testeToxidade from './testeToxidade'; // Importando a função de validação de toxicidade
 
 export default function App() {
