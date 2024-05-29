@@ -3,15 +3,21 @@ import {
   View,
   FlatList,
   TextInput,
-  Button,
   Alert,
   Text,
   Image,
+  // Card,
 } from "react-native";
-import { Provider as PaperProvider, Card, Paragraph } from "react-native-paper";
-import usuario from "../../assets/usuario.png";
-import testeToxidade from "../safeText/toxicity"; // Corrigir caminho da importação
-import styles from "../constants/style"; // Importar estilos
+import {
+  Provider as PaperProvider,
+  Card,
+  Paragraph,
+  Button,
+} from "react-native-paper";
+import imagemMuitoPequena from "../../assets/usuario.png";
+import usuario from "../../assets/user.png";
+import styles from "../constants/style";
+import testeToxidade from "../safeText/toxicity";
 
 export default function Tela() {
   const [textoTweet, setTextoTweet] = useState("");
@@ -32,7 +38,7 @@ export default function Tela() {
         }
 
         const newTweet = {
-          icone: usuario,
+          icon: usuario,
           autorPostagem: "User",
           textoPostagem: textoTweet.trim(),
         };
@@ -52,7 +58,10 @@ export default function Tela() {
   return (
     <PaperProvider>
       <View
-        style={tweets.length === 0 ? styles.containerEmpty : styles.container}
+        style={{
+          flex: 1,
+          backgroundColor: "#280343",
+        }}
       >
         {tweets.length === 0 ? (
           <View style={styles.containerEmoji}>
@@ -65,11 +74,9 @@ export default function Tela() {
             renderItem={({ item }) => (
               <Card style={styles.card}>
                 <Card.Content>
-                  <View style={styles.cabecalhoPostagem}>
-                    <Image source={item.icone} style={styles.icone} />
-                    <Text style={styles.autorPostagem}>
-                      {item.autorPostagem}
-                    </Text>
+                  <View style={styles.userInfo}>
+                    <Image source={item.icon} style={styles.profileImage} />
+                    <Text style={styles.usuario}>{item.autorPostagem}</Text>
                   </View>
                   <Paragraph style={styles.textoPostagem}>
                     {item.textoPostagem}
@@ -77,10 +84,14 @@ export default function Tela() {
                 </Card.Content>
               </Card>
             )}
-            keyExtractor={(item, index) => index.toString()}
+            // keyExtractor={(item, index) => index.toString()}
           />
         )}
         <View style={styles.caixaTexto}>
+          <View style={styles.userInfo}>
+            <Image source={usuario} style={styles.profileImage} />
+            <Text style={styles.usuario}>@User</Text>
+          </View>
           <TextInput
             style={styles.campoComentario}
             placeholder="Digite seu tweet"
@@ -88,7 +99,9 @@ export default function Tela() {
             value={textoTweet}
             onChangeText={(text) => setTextoTweet(text)}
           />
-          <Button title="Enviar" onPress={criarTweet} color="#a80000" />
+          <Button onPress={criarTweet} style={styles.btnEnviar}>
+            Enviar
+          </Button>
         </View>
       </View>
     </PaperProvider>

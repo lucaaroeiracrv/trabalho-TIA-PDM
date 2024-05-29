@@ -2,43 +2,11 @@ import { StyleSheet } from "react-native";
 import { width, height } from "./dimensions";
 
 const styles = StyleSheet.create({
-  cabecalhoPostagem: {
-    flexDirection: "row",
-    alignSelf: "flex-start",
-    alignItems: "center",
-    marginLeft: width * 0.06,
-    gap: 12,
-  },
-  icone: {
-    height: 50,
-    width: 50,
-    borderRadius: 50,
-    margin: 0,
-  },
-  autorPostagem: {
-    color: "white",
-    fontSize: 22,
-  },
-  textoPostagem: {
-    color: "white",
-    fontSize: 22,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: "#cfcd59",
-    justifyContent: "space-between",
-    padding: 20,
-  },
-  containerEmpty: {
-    flex: 1,
-    backgroundColor: "#282a36",
-    justifyContent: "center",
-    alignItems: "center",
-  },
   containerEmoji: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#280343",
   },
   emoji: {
     fontSize: 50,
@@ -46,33 +14,75 @@ const styles = StyleSheet.create({
   textoEmoji: {
     marginTop: 10,
     fontSize: 18,
-    color: "white",
+    color: "whitesmoke",
   },
-  caixaTexto: {
-    backgroundColor: "#2d0038",
-    padding: 20,
-    borderRadius: 10,
-    width: "100%",
-    marginBottom: 20,
-  },
-  campoComentario: {
-    color: "white",
-    marginTop: 5,
-    height: 80,
-    padding: 10,
-  },
-  btnPostar: {
-    backgroundColor: "#a80000",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
+  fundoCor: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#280343",
   },
   card: {
     marginVertical: 10,
+    backgroundColor: "#210b35",
+    elevation: 4,
+    color: "whitesmoke",
+  },
+  cabecalhoPostagem: {
+    flexDirection: "row",
+    alignSelf: "flex-start",
+    alignItems: "center",
+    marginLeft: width * 0.04,
+    gap: 12,
+  },
+  icon: {
+    height: 50,
+    width: 50,
+    borderRadius: 50,
+    margin: 0,
+  },
+  textoPostagem: {
+    color: "whitesmoke",
+    fontSize: 20,
+  },
+  caixaTexto: {
+    backgroundColor: "#1b1027",
+    padding: 20,
+    borderTopStartRadius: 40,
+    borderTopEndRadius: 40,
+    marginTop: 20,
+    height: height * 0.28,
+  },
+  campoComentario: {
+    color: "whitesmoke",
+    height: 80,
+    padding: 10,
+    marginVertical: 15,
+    fontSize: 20,
+  },
+
+  userInfo: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  profileImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 50,
+    marginRight: 12,
+  },
+  usuario: {
+    color: "whitesmoke",
+    fontSize: 24,
+  },
+
+  btnEnviar: {
+    backgroundColor: "#99272d",
+    color: "whitesmoke",
+    borderRadius: 25,
+    width: 300,
+    alignSelf: "center",
   },
 });
 
